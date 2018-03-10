@@ -30,7 +30,7 @@ export default class App extends React.Component {
       <Provider store={this.store}>
       <Layout>
         <Messages/>
-        <SendMessageForm/>
+        <div style={{clear:'both'}}><SendMessageForm/></div>
       </Layout>
       </Provider>
     )

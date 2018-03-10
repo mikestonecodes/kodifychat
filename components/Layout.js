@@ -19,8 +19,10 @@ img {
 
 .container {
 	padding: 40px 20px;
+  overflow:auto;
 	margin: 0 auto;
-	width: 400px;
+	width: 80%;
+  heieght:80%
 }
 
 /* .bubble */
