@@ -166,6 +166,21 @@ background-image: -webkit-gradient(
 	left: auto;
 	right: -5px;
 }
+.bubble--think {
+  background-image: rgb(181,189,200); /* Old browsers */
+  background-image: -moz-linear-gradient(top, rgba(181,189,200,1) 0%, rgba(130,140,149,1) 36%, rgba(40,52,59,1) 100%); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0 ); /* IE6-9 */
+  color:white
+}
+ .bubble--think:before{
+  border-bottom-color: #b5bdc8;
+}
+.bubble--think:after{
+  border-bottom-color: #28343b;
+}
+
     `}
     </style>
   </div>
