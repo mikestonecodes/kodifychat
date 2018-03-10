@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {sorted, get, fetch, add, single} from 'redux-jet'
 import thunk from 'redux-thunk'
-import uuid from 'uuid'
+const uuid = require('uuid/v1')
 import connection from './connection'
 const messagesQuery = {
   path: {startsWith: 'message/#'},
@@ -27,11 +27,17 @@ export default (initialState) => {
 
   if (initialState) {
    store.resume = () => {
-     const id = localStorage.id = localStorage.id || uuid.v1()
+     console.log("yo")
+     const id = localStorage.id = localStorage.id || uuid()
       add(connection, 'client/#' + id, {joinedAt: Date.now(), id, name: localStorage.name})(store.dispatch)
+      meQuery.path.equals += id
+      fetch(connection, meQuery, 'me')(store.dispatch)
+      fetch(connection, clientsQuery, 'clients')(store.dispatch)
       fetch(connection, messagesQuery, 'messages')(store.dispatch)
+
     store.subscribe(() => {
       const state = store.getState()
+        console.log(id,store.getState())
       localStorage.name = state.me && state.me.name ? state.me.name : null
     })
    }
@@ -39,7 +45,9 @@ export default (initialState) => {
 
   store.getInitialState = () => {
     //connect to stuff here
-     return Promise.all([ get(connection, messagesQuery, 'messages')(store.dispatch) ]).then( () => store.getState() )
+     return Promise.all([
+        get(connection, clientsQuery, 'clients')(store.dispatch),
+        get(connection, messagesQuery, 'messages')(store.dispatch) ]).then( () => store.getState() )
   }
 
 }

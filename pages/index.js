@@ -21,7 +21,7 @@ export default class App extends React.Component {
   constructor (props) {
     super(props)
     this.store = props.store.dispatch ? props.store : initStore(props.initialState)
-    console.log(this.store)
+    console.log(this.state)
   }
 
   render () {
