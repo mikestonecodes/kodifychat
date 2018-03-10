@@ -1,16 +1,14 @@
 import React from 'react'
 
-const SendMessageForm = ({sendMessage,setUserName, name, me}) => (
+const SendMessageForm = (actions) => (
   <form className='message-form' action='javascript:' onSubmit={({target: {text}}) => {
     if (text.value) {
-      if(text.value.includes("/nick")){
-        setUserName(text.value.split("/nick "))
-      } else if(text.value[0]=="/")  {
-        sendCommand(text.value.slice(1),text.value.split(" ").shift())
+     if(text.value[0]=="/")  {
+       console.log(text.value.slice(1).split(" ")[0] , text.value.slice(1).split(" ").slice( 1) )
+       actions[(text.value.slice(1).split(" ")[0])].apply(this,text.value.slice(1).split(" ").slice( 1) )
       } else{
-        sendMessage(text.value)
+        actions.sendMessage(text.value)
       }
-
       text.value = ''
     }
   }}>

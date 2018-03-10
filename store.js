@@ -5,7 +5,7 @@ import uuid from 'uuid'
 import connection from './connection'
 const messagesQuery = {
   path: {startsWith: 'message/#'},
-  sort: {byValueField: {postedAt: 'number'}, descending: true, from: 1, to: 30}
+  sort: {byValueField: {postedAt: 'number'}, descending: false, from: 1, to: 30}
 }
 const meQuery = {
   path: {equals: 'client/#'}
