@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MessageForm = ({sendMessage}) => (
+const sendMessageForm = ({sendMessage, name, me}) => (
   <form className='message-form' action='javascript:' onSubmit={({target: {text}}) => {
     if (text.value) {
       sendMessage(text.value)
@@ -12,5 +12,4 @@ const MessageForm = ({sendMessage}) => (
   </form>
 )
 
-
-export default MessageForm
+export default sendMessageForm

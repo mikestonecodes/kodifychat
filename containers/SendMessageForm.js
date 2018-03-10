@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import {call, change} from 'redux-jet'
 import connection from '../connection'
-import sendMessage from '../components/sendMessage'
+import SendMessageForm from '../components/SendMessageForm'
 const mapStateToProps = state => ({
   me: state.me,
   name: state.me && state.me.name
@@ -16,4 +16,4 @@ const mergeProps = (stateProps, dispatchProps) => ({
   sendMessage: text => dispatchProps.sendMessage(stateProps.me.id, text, stateProps.name),
 })
 
-export default connect(mapStateToProps, actions, mergeProps)(sendMessage)
+export default connect(mapStateToProps, actions, mergeProps)(SendMessageForm)
