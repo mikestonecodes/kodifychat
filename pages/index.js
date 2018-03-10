@@ -1,36 +1,41 @@
 import React from 'react'
 import Messages from '../containers/Messages'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import initStore from '../store.js'
 import SendMessageForm from '../containers/SendMessageForm'
 import Layout from '../components/Layout'
 export default class App extends React.Component {
 
-  static  getInitialProps ({req}) {
+  static getInitialProps({req}) {
     if (req) {
       console.log("only on server")
       const store = initStore()
-      return store.getInitialState().then(initialState => ({initialState, store}))
+      return store.getInitialState().then(initialState => ({
+        initialState,
+        store
+      }))
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.store.resume()
   }
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.store = props.store.dispatch ? props.store : initStore(props.initialState)
     console.log(this.store)
   }
 
-  render () {
-      console.log(this.store ,"fafa")
+  render() {
+    console.log(this.store, "fafa")
     return (
       <Provider store={this.store}>
       <Layout>
         <Messages/>
-        <div style={{clear:'both'}}><SendMessageForm/></div>
+        <div style={{
+        clear: 'both'
+      }}><SendMessageForm/></div>
       </Layout>
       </Provider>
     )

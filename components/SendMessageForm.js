@@ -4,10 +4,10 @@ const SendMessageForm = (actions) => (
   <form className='message-form' action='javascript:' onSubmit={({target: {text}}) => {
     if (text.value) {
 
-     if(text.value[0]=="/")  {
-       console.log(text.value.slice(1).split(" ")[0] , text.value.slice(1).split(" ").slice( 1) )
-       actions[(text.value.slice(1).split(" ")[0])].apply(this,text.value.slice(1).split(" ").slice( 1) )
-      } else{
+      if (text.value[0] == "/") {
+        console.log(text.value.slice(1).split(" ")[0], text.value.slice(1).split(" ").slice(1))
+        actions[(text.value.slice(1).split(" ")[0])].apply(this, text.value.slice(1).split(" ").slice(1))
+      } else {
         actions.sendMessage(text.value)
       }
       text.value = ''
