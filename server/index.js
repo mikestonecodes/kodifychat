@@ -9,8 +9,14 @@ Promise.all([
   peer.connect(),
 ]).then(() => {
   console.log('chat server ready')
-  peer.add("test")
-  messages.push("test")
+  const id = uuid.v1()
+  var message=new jet.State('message/#' + id, {
+      postedAt: Date.now(),
+      id,
+      text: "test",
+    })
+  peer.add(message)
+  messages.push(message)
 })
 
 daemon.listen({
