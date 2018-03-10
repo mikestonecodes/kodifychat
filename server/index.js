@@ -23,6 +23,7 @@ const addMessage = new jet.Method('message/add')
 
 Promise.all([
   peer.connect(),
+    peer.add(addMessage),
 ]).then(() => {
   console.log('chat server ready')
   const id = uuid.v1()
