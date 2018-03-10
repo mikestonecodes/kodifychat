@@ -25,8 +25,8 @@ export default class App extends React.Component {
 
   render () {
     return (
- <Provider store={this.store}><Messages/></Provider>
-  )
+      <Provider store={this.store}><Messages/></Provider>
+    )
   }
 
 }
