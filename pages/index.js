@@ -2,6 +2,7 @@ import React from 'react'
 import Messages from '../containers/Messages'
 import {Provider} from 'react-redux'
 import initStore from '../store.js'
+import SendMessage from '../containers/sendMessage'
 export default class App extends React.Component {
 
   static  getInitialProps ({req}) {
@@ -25,7 +26,12 @@ export default class App extends React.Component {
 
   render () {
     return (
-      <Provider store={this.store}><Messages/></Provider>
+      <Provider store={this.store}>
+      <div>
+      <Messages/>
+      <SendMessage/>
+      </div>
+      </Provider>
     )
   }
 

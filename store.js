@@ -2,7 +2,7 @@ import {createStore, applyMiddleware, combineReducers} from 'redux'
 import {sorted, get, fetch, add, single} from 'redux-jet'
 import thunk from 'redux-thunk'
 import uuid from 'uuid'
-const connection={url: 'ws://localhost:3001'}
+import connection from './connection'
 const messagesQuery = {
   path: {startsWith: 'message/#'},
   sort: {byValueField: {postedAt: 'number'}, descending: true, from: 1, to: 30}
