@@ -5,11 +5,11 @@ class Messages extends React.Component {
     const messages = this.props.messages
 
     return (
-      <ul>
-        {messages.map(message => <li key={message.id} className={message.isMine ? 'is-mine' : ''}>
-          <div className='text'>{message.text}</div>
-        </li>)}
-      </ul>
+      <div class="container">
+        {messages.map(message => <div key={message.id} className={message.isMine ? 'bubble bubble--alt' : 'bubble'}>
+        {message.text}
+        </div>)}
+      </div>
     )
   }
 }

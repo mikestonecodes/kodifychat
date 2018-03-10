@@ -3,6 +3,7 @@ import Messages from '../containers/Messages'
 import {Provider} from 'react-redux'
 import initStore from '../store.js'
 import SendMessageForm from '../containers/SendMessageForm'
+import Layout from '../components/Layout'
 export default class App extends React.Component {
 
   static  getInitialProps ({req}) {
@@ -15,22 +16,22 @@ export default class App extends React.Component {
 
   componentDidMount () {
     this.store.resume()
-
   }
 
   constructor (props) {
     super(props)
     this.store = props.store.dispatch ? props.store : initStore(props.initialState)
-    console.log(this.state)
+    console.log(this.store)
   }
 
   render () {
+      console.log(this.store)
     return (
       <Provider store={this.store}>
-      <div>
-      <Messages/>
-      <SendMessageForm/>
-      </div>
+      <Layout>
+        <Messages/>
+        <SendMessageForm/>
+      </Layout>
       </Provider>
     )
   }
