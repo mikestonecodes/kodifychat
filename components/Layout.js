@@ -81,7 +81,14 @@ const Layout = (props) => (
       	height: auto;
       	max-width: 100%;
       }
-
+      .name{
+        font-size:11px;
+        font-weight:bold;
+        position:absolute;
+        bottom:35px;
+        left:15px;
+        background:none;
+      }
       .container {
       	padding: 40px 20px;
         overflow:auto;

@@ -11,7 +11,8 @@ class Messages extends React.Component {
     return (
       <div class="container">
         {messages.map(message => <div key={message.id} className={(message.isMine ? 'bubble bubble--alt ' : 'bubble ') + (message.think ? 'bubble--think' : '')}>
-        {message.text}
+        <b className="name"> {message.name!='null' && !message.isMine ?message.name:""}</b>
+        <div>{message.text}</div>
         </div>)}
       </div>
     )

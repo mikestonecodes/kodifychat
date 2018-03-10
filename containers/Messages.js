@@ -4,7 +4,8 @@ import Messages from '../components/Messages'
 const mapStateToProps = ({messages, me = {}}) => ({
   messages: messages.map(message => ({
     ...message.value,
-    isMine: me.value && message.value.userId === me.value.id
+    isMine: me.value && message.value.userId === me.value.id,
+    name: message.value.user
   }))
 })
 
