@@ -1,9 +1,16 @@
 import React from 'react'
 
-const sendMessageForm = ({sendMessage, name, me}) => (
+const SendMessageForm = ({sendMessage, name, me}) => (
   <form className='message-form' action='javascript:' onSubmit={({target: {text}}) => {
     if (text.value) {
-      sendMessage(text.value)
+      if(text.value=="/nick"){
+
+      } else if(text.value[0]=="/")  {
+        sendCommand(text.slice(1),text.split(" ").shift())
+      } else{
+        sendMessage(text.value)
+      }
+
       text.value = ''
     }
   }}>
@@ -12,4 +19,4 @@ const sendMessageForm = ({sendMessage, name, me}) => (
   </form>
 )
 
-export default sendMessageForm
+export default SendMessageForm
