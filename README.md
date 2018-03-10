@@ -10,7 +10,11 @@ npm run dev
 build:
 npm install
 npx next build
+
+start
 npx next start (optional -p for port)
+node server/index.js (jet server)
+
 
 Notes:
 use firefox and chrome or two separate computers to have conversion, using same browser will count as same user
