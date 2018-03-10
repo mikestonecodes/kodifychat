@@ -10,12 +10,14 @@ const mapStateToProps = state => ({
 const actions = {
   sendMessage: (clientId, text, name) => call(connection, 'message/add', [text, clientId, name]),
   nick: (user,name) => change(connection, 'client/#' + user.id, {...user, name}),
+  oops: () => call(connection, 'message/oops'),
 }
 
 const mergeProps = (stateProps, dispatchProps) => ({
   ...stateProps,
   sendMessage: text => dispatchProps.sendMessage(stateProps.me.id, text, stateProps.name),
-  nick:  name => dispatchProps.nick(stateProps.me, name)
+  nick:  name => dispatchProps.nick(stateProps.me, name),
+    oops:  () => dispatchProps.oops()
 })
 
 export default connect(mapStateToProps, actions, mergeProps)(SendMessageForm)
