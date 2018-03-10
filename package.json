@@ -1,0 +1,27 @@
+{
+  "name": "kodifychat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikestonecodes/kodifychat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikestonecodes/kodifychat/issues"
+  },
+  "homepage": "https://github.com/mikestonecodes/kodifychat#readme",
+  "dependencies": {
+    "next": "^5.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux-jet": "^2.3.2"
+  }
+}
