@@ -64,11 +64,11 @@ const Layout = (props) => (
       }
       input{
         background-color:white;
-          outline: none;
-          padding: 12px 0px 12px 12px;
-          border: 1px solid #DDDDDD;
+        outline: none;
+        padding: 12px 0px 12px 12px;
+        border: 1px solid #DDDDDD;
         width:90%
-        margin-left:5%;
+        margin-left:2.5%;
         outline:none;
         margin-bottom:20px;
       }
