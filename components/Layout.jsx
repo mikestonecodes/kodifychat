@@ -1,4 +1,10 @@
 const Layout = (props) => (
+<html>
+  <head>
+    <title>kodify Chat</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"/>
+  </head>
   <div>
     {props.children}
     <style jsx global> {`  /* Bit of normalisation */
@@ -8,7 +14,6 @@ const Layout = (props) => (
          v2.0 | 20110126
          License: none (public domain)
       */
-
       html, body, div, span, applet, object, iframe,
       h1, h2, h3, h4, h5, h6, p, blockquote, pre,
       a, abbr, acronym, address, big, cite, code,
@@ -52,19 +57,15 @@ const Layout = (props) => (
       	border-collapse: collapse;
       	border-spacing: 0;
       }
-
-
       input:focus, textarea:focus {
         box-shadow: 0 0 5px rgba(81, 203, 238, 1);
         padding: 12px 0px 12px 12px;
-
         border: 1px solid rgba(81, 203, 238, 1);
       }
       input{
         background-color:white;
           outline: none;
           padding: 12px 0px 12px 12px;
-
           border: 1px solid #DDDDDD;
         width:90%
         margin-left:5%;
@@ -190,6 +191,7 @@ const Layout = (props) => (
     `}
     </style>
   </div>
+</html>
 )
 
 export default Layout
