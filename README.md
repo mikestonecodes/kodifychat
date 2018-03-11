@@ -12,6 +12,7 @@ npm install
 npx next build
 
 start
+modify connection.js to your url ( defualt localhost )
 npx next start (optional -p for port)
 node server/index.js (jet server)
 
