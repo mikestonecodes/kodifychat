@@ -17,5 +17,7 @@ node server/index.js (jet server)
 
 
 Notes:
+
 use firefox and chrome or two separate computers to have conversion, using same browser will count as same user
+
 to see /nick in action, type nick, send a message and  then open in another browser ( it only displays name after )
